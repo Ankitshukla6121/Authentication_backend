@@ -67,7 +67,7 @@ router.put("/update/:id",authMiddleware, async(req,res)=>{
 // delete the post 
 
 
-router.delete("/delete/:id",async(req,res)=>{
+router.delete("/delete/:id",authMiddleware,async(req,res)=>{
     try {
          const post= await Post.findById(req.params.id);
     if(!post){
